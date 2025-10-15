@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brand Story Review — Project One × Wheel the World</title>
+  <meta name="description" content="A premium interactive brand story review experience by Project One — Brand Synthesis Lab." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="logo" aria-label="Project One">P1</div>
+      <div class="titleblock">
+        <h1>Brand Story Review — Wheel the World</h1>
+        <div class="subtitle">Project One · Brand Synthesis Laboratory · Live Preview</div>
+      </div>
+      <div class="actions">
+        <button class="btn" id="toggleTheme" title="Toggle theme"><span class="icon">🌓</span><span class="label">Theme</span></button>
+        <button class="btn" id="exportFeedback" title="Export feedback JSON"><span class="icon">🧾</span><span class="label">Feedback</span></button>
+        <button class="btn" id="copySummary" title="Copy review summary"><span class="icon">📋</span><span class="label">Summary</span></button>
+        <button class="btn btn-primary" id="printPdf" title="Print / Save as PDF"><span class="icon">🖨️</span><span class="label">Review PDF</span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="banner" id="welcomeBanner">
+    <p><strong>Welcome to your Brand Story Review!</strong> Please review each chapter, then use the controls at the bottom to approve or request changes. Your progress is saved automatically.</p>
+    <button class="btn no-print" id="dismissBanner">&times;</button>
+  </div>
+
+  <div class="grid">
+    <aside>
+      <div class="navcard">
+        <div class="progress">
+          <div class="bar" style="flex:1"><span id="progressBar"></span></div>
+          <span id="progressText">0% approved</span>
+        </div>
+        <h3>Chapters</h3>
+        <nav class="sidenav" id="sidenav"></nav>
+      </div>
+    </aside>
+
+    <main id="content"></main>
+  </div>
+
+  <footer>
+    <p class="muted">This interface is a portable one-file review kit. Approvals and notes are saved locally in your browser. Use <strong>Feedback</strong> to export decisions as JSON, or <strong>Review PDF</strong> to print/save.</p>
+  </footer>
+
+  <div class="toast" id="saveToast">✅ Changes saved</div>
+
+  <script id="brandData" type="application/json">{
+  "client": {
+    "name": "Wheel the World"
+  },
+  "story": [
+    {
+      "id": "north-star",
+      "title": "Our North Star: The Problem We Solve",
+      "content": [
+        { "type": "paragraph", "text": "The world of travel is filled with vague promises. Labels like 'accessible' or 'friendly' mean little without proof, forcing travelers with disabilities to become detectives just to plan a trip. They spend countless hours on the phone, trying to confirm if a hotel room *actually* meets their specific needs. This uncertainty creates stress and turns the joy of trip planning into a high-stakes gamble." },
+        { "type": "paragraph", "text": "Wheel the World exists to replace that uncertainty with verified confidence. We are here to make the world accessible by turning vague claims into bookable facts." },
+        { "type": "blockquote", "text": "Our purpose is to empower people to explore without limits. We do this by providing granular, verified details, guaranteed accessibility, and human support every step of the way." }
+      ]
+    },
+    {
+      "id": "values",
+      "title": "What We Believe (Our Values)",
+      "content": [
+        { "type": "paragraph", "text": "Our values are the commitments that guide every decision we make, from how we design our platform to how we speak with our customers." },
+        { "type": "list", "items": [
+          "<strong>Dignity:</strong> We center the traveler’s autonomy and comfort in everything we do. Our users are explorers, not patients.",
+          "<strong>Verification:</strong> We believe in facts over labels. We show measurements and photos, not just slogans.",
+          "<strong>Empathy:</strong> We address real-world constraints with plain, respectful language. No euphemisms, no pity.",
+          "<strong>Reliability:</strong> We make commitments that hold up from the curb to the room, and from the door to the shower.",
+          "<strong>Adventure:</strong> We exist to enable joyful exploration, not just functional access."
+        ]}
+      ]
+    },
+    {
+      "id": "voice",
+      "title": "Our Voice: Speaking with Dignity and Clarity",
+      "content": [
+        { "type": "paragraph", "text": "Our voice is that of an empathetic expert and a trusted guide. We understand the critical details our users need, and we deliver that information with warmth and directness. We are reassuring, clear, and always respectful." },
+        { "type": "key_points", "points": [
+          { "label": "Our Character", "value": "Empathetic, expert, direct, and reassuring." },
+          { "label": "What We Do", "value": "Lead with verified facts. Use person-first, dignity-first language. Write short, active sentences that get to the point." },
+          { "label": "What We Avoid", "value": "Vague buzzwords ('handicap-friendly'), medicalized tones, or framing disability as an obstacle to be 'overcome'." }
+        ]},
+        { "type": "blockquote", "text": "A signature phrase that captures our voice: 'Verified accessibility, from planning to check-in.'" }
+      ]
+    },
+    {
+      "id": "visuals",
+      "title": "Our Look & Feel: Designing for Confidence",
+      "content": [
+        { "type": "paragraph", "text": "Our visual identity is designed to build trust and provide clarity. It's clean, warm, and highly functional—like a well-designed map that inspires confidence for the journey ahead." },
+        { "type": "list", "items": [
+          "<strong>Color Palette:</strong> Our colors are calm and trustworthy. A deep teal provides a sense of stability and calm, while warm cream and crisp charcoal create a comfortable, high-contrast, and easy-to-read environment.",
+          "<strong>Typography:</strong> We use clean, geometric, and highly legible fonts. Our priority is always clarity and ease of reading, ensuring critical information is never missed.",
+          "<strong>Imagery & Photography:</strong> We show real travelers in real environments. Our photos are both beautiful and useful, celebrating the joy of discovery while clearly framing the functional features that make it possible. We always pair the beauty shot with the proof shot."
+        ]}
+      ]
+    },
+    {
+      "id": "action",
+      "title": "Our Promise in Action: From Content to Check-in",
+      "content": [
+        { "type": "paragraph", "text": "Our brand isn't just a collection of ideas; it's a tangible promise we deliver through our product and content. This is how our philosophy comes to life for our users." },
+        { "type": "list", "items": [
+          "<strong>The Accessibility Profile:</strong> We empower users to tell us their specific needs once, so we can do the heavy lifting of finding perfect, verified matches for them.",
+          "<strong>The Verification Standard:</strong> We meticulously map hotels and activities with a standardized checklist, capturing the real measurements and photos that matter.",
+          "<strong>The Guarantee:</strong> Our 'Accessible Room Guarantee' is our ultimate commitment. It ensures that what our users book is what they get upon arrival.",
+          "<strong>Our Content:</strong> We educate and inspire by showcasing verified destinations and sharing real traveler stories. We always lead with the facts that build trust and enable adventure."
+        ]}
+      ]
+    },
+    {
+      "id": "success",
+      "title": "How We Know We're Succeeding",
+      "content": [
+        { "type": "paragraph", "text": "Success for us isn't just measured in bookings. It's measured by the trust we build and the confidence we create. We know we're succeeding when..." },
+        { "type": "list", "items": [
+          "...more travelers book with the confidence that comes from using their detailed Accessibility Profile.",
+          "...the density of verified, measured, and photographed listings on our platform grows every single day.",
+          "...our guarantee claims are exceptionally rare, proving the reliability and accuracy of our verification process."
+        ]}
+      ]
+    },
+    {
+      "id": "validation",
+      "title": "Confirming Our Shared Vision",
+      "content": [
+        { "type": "paragraph", "text": "Please review the core principles of our brand story. Your confirmation on these points will align our teams and set the foundation for all creative and product work moving forward." },
+        { "type": "checklist", "items": [
+          "Our brand promise, 'Explore without limits,' captures our core purpose.",
+          "Our values (Dignity, Verification, Empathy, Reliability, Adventure) are the right guiding principles.",
+          "The 'empathetic expert' voice feels authentic to our brand.",
+          "Our 'design for confidence' visual approach aligns with our goals.",
+          "The promise of a guarantee is central to building user trust."
+        ]}
+      ]
+    }
+  ]
+}</script>
+  <script src="script.js"></script>
+</body>
+</html>
