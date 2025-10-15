@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaOnboard - AI-Powered Brand Onboarding</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-white antialiased">
+
+    <div id="particles"></div>
+    
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-fuchsia-500 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight">NovaOnboard</span>
+                </div>
+                
+                <nav class="hidden md:flex items-center gap-8 text-sm">
+                    <a href="#features" class="text-gray-300 hover:text-white transition-colors">Features</a>
+                    <a href="#how-it-works" class="text-gray-300 hover:text-white transition-colors">How it works</a>
+                    <a href="#pricing" class="text-gray-300 hover:text-white transition-colors">Pricing</a>
+                    <a href="#testimonials" class="text-gray-300 hover:text-white transition-colors">Testimonials</a>
+                </nav>
+                
+                <div class="flex items-center gap-3">
+                    <button class="hidden md:block px-4 py-2 text-sm text-gray-300 hover:text-white transition-colors">
+                        Sign In
+                    </button>
+                    <button id="get-started-btn" class="px-6 py-2.5 bg-gradient-to-r from-indigo-500 to-fuchsia-500 rounded-lg text-sm font-medium transition-all">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="landing-page">
+        <section class="relative pt-32 pb-20 px-6 overflow-hidden">
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="text-center max-w-4xl mx-auto">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-indigo-500/30 mb-8">
+                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                        <span class="text-sm text-gray-300">AI-Powered Brand Intelligence</span>
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                        Build Your Brand
+                        <span class="block gradient-text">In 15 Minutes</span>
+                    </h1>
+                    
+                    <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                        Transform scattered brand assets into a comprehensive Brand Passport. Our AI analyzes your website, documents, and voice to create consistent, on-brand content.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+                        <button class="group px-8 py-4 bg-white text-black rounded-xl font-semibold transition-transform flex items-center gap-2">
+                            Start Free Trial
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </button>
+                        <button class="px-8 py-4 glass rounded-xl font-semibold hover:bg-white/10 transition-colors flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"></path>
+                            </svg>
+                            Watch Demo
+                        </button>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
+                        <div>
+                            <div class="text-4xl font-bold gradient-text counter" data-target="500">0</div>
+                            <div class="text-sm text-gray-400 mt-1">Active Brands</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold gradient-text counter" data-target="15">0</div>
+                            <div class="text-sm text-gray-400 mt-1">Minutes Setup</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold gradient-text counter" data-target="80">0</div>
+                            <div class="text-sm text-gray-400 mt-1">% Time Saved</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold gradient-text">4.9</div>
+                            <div class="text-sm text-gray-400 mt-1">User Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-20 px-6 relative">
+            </section>
+
+        <section class="py-20 px-6 relative">
+            </section>
+    </div>
+
+    <div id="onboarding-flow" class="hidden min-h-screen flex-col">
+        <header id="onboarding-header" class="sticky top-0 z-40 bg-black/80 backdrop-blur-md border-b border-neutral-800">
+            </header>
+
+        <div class="flex-grow mx-auto max-w-7xl w-full px-4 py-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <main class="lg:col-span-2 space-y-8">
+                    
+                    <div id="step-0" class="onboarding-step">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">0. Import de vos ressources</h3>
+                                <p class="card-description">Fournissez votre site web et documents pour pré-remplir automatiquement votre profil.</p>
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <label for="website" class="form-label">URL de votre site web</label>
+                                    <div class="flex gap-2">
+                                        <input id="website" type="url" class="form-input flex-1" placeholder="https://votresite.com">
+                                        <button id="analyze-btn" class="btn-primary">Analyser</button>
+                                    </div>
+                                    <p id="analysis-feedback" class="mt-2 text-sm text-green-400 items-center gap-2 hidden">
+                                        </p>
+                                </div>
+                                <div class="file-drop-zone">
+                                    </div>
+                                <div class="file-drop-zone">
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="step-1" class="onboarding-step hidden">
+                        </div>
+                    
+                    <div class="flex justify-between">
+                        <button id="prev-step-btn" class="btn-secondary hidden">
+                            <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                            Précédent
+                        </button>
+                        <button id="next-step-btn" class="btn-primary ml-auto">
+                            Suivant
+                            <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m-7-7h14"></path></svg>
+                        </button>
+                    </div>
+                </main>
+                
+                <aside class="space-y-6 sticky top-24 h-fit">
+                    <div class="card">
+                        </div>
+                    <div class="card">
+                        </div>
+                    <div id="progress-summary" class="card">
+                        </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="border-t border-white/5 py-12 px-6">
+        <div class="max-w-7xl mx-auto text-center text-gray-500 text-sm">
+            <p>© 2025 NovaOnboard. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
